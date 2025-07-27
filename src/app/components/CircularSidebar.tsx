@@ -22,7 +22,6 @@ const CircularSidebar = () => {
         angleStart + ((angleEnd - angleStart) / (total - 1)) * index
 
     return (
-        <div className='bg-[#22304A] h-screen'>
             <div className='relative flex items-center justify-center w-[37.5rem] h-[37.5rem] -left-[20rem]'>
                 {/* Outer circle */}
                 <motion.div
@@ -124,7 +123,6 @@ const CircularSidebar = () => {
                 {/* Inner hollow circle */}
                 <div className='w-[26rem] h-[26rem] bg-[#22304A] rounded-full absolute z-5' />
             </div>
-        </div>
     )
 }
 

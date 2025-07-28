@@ -1,28 +1,33 @@
-import React from 'react'
-import CircularSidebar from './components/CircularSidebar'
-import Navbar from './components/Navbar'
-import Carousel from './components/Carousel'
+"use client";
+import React, { useState } from "react";
+import CategorySidebar from "./components/CategorySidebar";
+import Navbar from "./components/Navbar";
+import Carousel from "./components/Carousel";
 
 const Home = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
+    undefined
+  );
+
+  const handleCategoryChange = (category: string) => {
+    setSelectedCategory(category);
+  };
+
   return (
-    <main>
-      <header className=' mt-6 py-4'>
+    <main className="min-h-screen bg-[#22304A] overflow-x-hidden">
+      <header className="sticky top-6 py-4 z-50">
         <Navbar />
       </header>
-      <section className="flex flex-col lg:flex-row items-start mt-16">
-        <div className="lg:min-w-[600px] flex justify-center">
-          <CircularSidebar />
+      <section className="flex flex-col lg:flex-row items-start mt-16 z-0 relative">
+        <div className="lg:w-[600px] flex justify-center lg:flex-shrink-0">
+          <CategorySidebar onCategoryChange={handleCategoryChange} />
         </div>
-        <div className="flex-1 w-full -ml-[10rem]">
-          <div>
-            <h1 className='text-6xl font-extrabold text-white'>OUR ICONIC RIDES</h1>
-          </div>
-          <Carousel />
+        <div className="flex-1 w-full lg:ml-8">
+          <Carousel selectedCategory={selectedCategory} />
         </div>
       </section>
-
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

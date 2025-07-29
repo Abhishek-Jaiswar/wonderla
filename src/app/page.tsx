@@ -14,15 +14,15 @@ const Home = () => {
   };
 
   return (
-    <main className="min-h-screen bg-[#22304A] overflow-x-hidden">
-      <header className="sticky top-6 py-4 z-50">
+    <main className="min-h-screen bg-[#22304A]">
+      <header className=" sticky top-10 z-50">
         <Navbar />
       </header>
-      <section className="flex flex-col lg:flex-row items-start mt-16 z-0 relative">
-        <div className="lg:w-[600px] flex justify-center lg:flex-shrink-0">
+      <section className="flex flex-col lg:flex-row items-start mt-16 z-0 relative overflow-x-hidden">
+        <div className="lg:w-[600px] flexjustify-center lg:flex-shrink-0">
           <CategorySidebar onCategoryChange={handleCategoryChange} />
         </div>
-        <div className="flex-1 w-full lg:ml-8">
+        <div className="flex-1 w-full  -ml-[12rem]">
           <Carousel selectedCategory={selectedCategory} />
         </div>
       </section>

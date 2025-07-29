@@ -75,22 +75,17 @@ const Carousel = ({ selectedCategory }: CarouselProps) => {
     }
   }, [index, controls, scroll, filteredItems.length]);
 
-  // Get category display name
-  const getCategoryDisplayName = () => {
-    if (!selectedCategory) return "OUR ICONIC RIDES";
-    return `${selectedCategory.toUpperCase()} RIDES`;
-  };
-
   return (
     <div className="w-full overflow-hidden px-4 py-6">
-      <div className="flex items-center justify-between mb-8">
-        <h1 className="text-4xl lg:text-5xl font-extrabold text-white">
-          {getCategoryDisplayName()}
+      <div className="flex items-center justify-between mb-8 max-w-5xl">
+        <h1 className="text-4xl lg:text-5xl font-extrabold text-white ">
+          OUR ICONIC RIDES
         </h1>
         <div className="flex items-center gap-4">
           <button
             onClick={() => setIndex((prev) => prev - 1)}
             className="w-12 h-12 lg:w-14 lg:h-14 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center transition-colors duration-300"
+            aria-label="Previous"
           >
             <svg
               width="13"
@@ -107,6 +102,7 @@ const Carousel = ({ selectedCategory }: CarouselProps) => {
           <button
             onClick={() => setIndex((prev) => prev + 1)}
             className="w-12 h-12 lg:w-14 lg:h-14 bg-gray-200 hover:bg-gray-300 rounded-full flex items-center justify-center transition-colors duration-300"
+            aria-label="Next"
           >
             <svg
               width="13"
@@ -145,10 +141,8 @@ const Carousel = ({ selectedCategory }: CarouselProps) => {
           ))}
         </motion.div>
       </div>
-
-      {/* Explore All Rides Button */}
-      <div className="flex justify-center mt-12">
-        <button className="bg-[#FAD500] hover:bg-[#E6C200] text-gray-900 font-bold py-4 px-8 rounded-xl transition-colors duration-300 text-lg">
+      <div className="flex mt-12">
+        <button className="bg-[#FAD500] hover:bg-[#E6C200] text-blue-600 font-bold py-4 px-18 rounded-full transition-colors duration-300 text-lg">
           Explore All Rides!
         </button>
       </div>

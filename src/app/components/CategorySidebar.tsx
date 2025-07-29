@@ -50,7 +50,6 @@ const CategorySidebar = ({ onCategoryChange }: CategorySidebarProps) => {
 
   return (
     <div className="relative flex items-center justify-center w-[37.5rem] h-[37.5rem] -left-[20rem]">
-      {/* Outer circle */}
       <motion.div className="absolute w-full h-full rounded-full bg-white z-0 overflow-hidden">
         <motion.div
           className="absolute w-[550px] h-[550px] rounded-full bg-[#FAD500] blur-3xl"
@@ -120,7 +119,6 @@ const CategorySidebar = ({ onCategoryChange }: CategorySidebarProps) => {
         }}
       />
 
-      {/* Inner circle - Icons */}
       {items.map((item, index) => {
         const angle = getAngle(index, items.length);
         const x = radiusInner * Math.cos((angle * Math.PI) / 149);
@@ -154,7 +152,6 @@ const CategorySidebar = ({ onCategoryChange }: CategorySidebarProps) => {
         );
       })}
 
-      {/* Inner hollow circle */}
       <div className="w-[26rem] h-[26rem] bg-[#22304A] rounded-full absolute z-5" />
     </div>
   );
